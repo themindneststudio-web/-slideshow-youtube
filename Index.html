@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 Rights Islam Gave Women — Slideshow</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0f0b06;
+    --bg-mid: #1a1008;
+    --bg-green: #0d2218;
+    --bg-burgundy: #1e0a10;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --white-warm: #f5f0e8;
+    --white-dim: #c8c0b0;
+    --accent-green: #4a8c6a;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background: #000;
+font-family: ‘Lato’, sans-serif;
+overflow: hidden;
+height: 100vh;
+width: 100vw;
+}
+
+/* SLIDESHOW CONTAINER */
+.slideshow {
+width: 100vw;
+height: 100vh;
+position: relative;
+}
+
+.slide {
+position: absolute;
+inset: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+opacity: 0;
+transition: opacity 0.8s ease;
+pointer-events: none;
+padding: 60px;
+text-align: center;
+}
+
+.slide.active {
+opacity: 1;
+pointer-events: all;
+}
+
+/* SECTION LABEL */
+.section-label {
+font-family: ‘Lato’, sans-serif;
+font-size: 11px;
+letter-spacing: 4px;
+text-transform: uppercase;
+color: var(–gold);
+opacity: 0.7;
+margin-bottom: 24px;
+}
+
+/* ARABIC PATTERN BACKGROUND */
+.arabic-bg {
+position: absolute;
+inset: 0;
+opacity: 0.04;
+background-image: url(“data:image/svg+xml,%3Csvg width=‘60’ height=‘60’ viewBox=‘0 0 60 60’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cg fill=‘none’ fill-rule=‘evenodd’%3E%3Cg fill=’%23c9a84c’ fill-opacity=‘1’%3E%3Cpath d=‘M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z’/%3E%3C/g%3E%3C/g%3E%3C/svg%3E”);
+}
+
+/* GEOMETRIC DECORATIONS */
+.geo-corner {
+position: absolute;
+width: 120px;
+height: 120px;
+opacity: 0.15;
+}
+
+.geo-corner.tl { top: 20px; left: 20px; border-top: 2px solid var(–gold); border-left: 2px solid var(–gold); }
+.geo-corner.tr { top: 20px; right: 20px; border-top: 2px solid var(–gold); border-right: 2px solid var(–gold); }
+.geo-corner.bl { bottom: 60px; left: 20px; border-bottom: 2px solid var(–gold); border-left: 2px solid var(–gold); }
+.geo-corner.br { bottom: 60px; right: 20px; border-bottom: 2px solid var(–gold); border-right: 2px solid var(–gold); }
+
+/* DIVIDER LINE */
+.gold-line {
+width: 60px;
+height: 1px;
+background: var(–gold);
+margin: 20px auto;
+opacity: 0.6;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+from { opacity: 0; transform: scale(0.9); }
+to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glowPulse {
+0%, 100% { text-shadow: 0 0 20px rgba(201,168,76,0.3); }
+50% { text-shadow: 0 0 40px rgba(201,168,76,0.7), 0 0 60px rgba(201,168,76,0.3); }
+}
+
+.slide.active .animate-1 { animation: fadeUp 0.8s ease 0.1s both; }
+.slide.active .animate-2 { animation: fadeUp 0.8s ease 0.3s both; }
+.slide.active .animate-3 { animation: fadeUp 0.8s ease 0.5s both; }
+.slide.active .animate-4 { animation: fadeUp 0.8s ease 0.7s both; }
+.slide.active .animate-5 { animation: fadeUp 0.8s ease 0.9s both; }
+.slide.active .animate-scale { animation: scaleIn 0.8s ease 0.2s both; }
+.slide.active .animate-fade { animation: fadeIn 1s ease 0.3s both; }
+
+/* ============ SLIDE STYLES ============ */
+
+/* SLIDE 1 — OPENER */
+#s1 { background: var(–bg-dark); }
+#s1 .main-text {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(28px, 5vw, 64px);
+color: var(–white-warm);
+line-height: 1.3;
+font-style: italic;
+}
+
+/* SLIDE 2 */
+#s2 { background: var(–bg-dark); }
+#s2 .claim {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(22px, 3.5vw, 48px);
+color: var(–white-warm);
+max-width: 800px;
+line-height: 1.5;
+}
+
+/* SLIDE 3 — BUT */
+#s3 { background: var(–bg-dark); }
+#s3 .big-word {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(60px, 12vw, 160px);
+color: var(–gold);
+font-style: italic;
+animation: glowPulse 3s ease infinite;
+}
+
+/* SLIDE 4 */
+#s4 { background: var(–bg-dark); }
+#s4 .question {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(24px, 4vw, 56px);
+color: var(–white-warm);
+max-width: 900px;
+line-height: 1.4;
+}
+#s4 .arabic-calligraphy {
+position: absolute;
+font-family: ‘Noto Naskh Arabic’, serif;
+font-size: clamp(60px, 10vw, 140px);
+color: var(–gold);
+opacity: 0.06;
+bottom: 80px;
+right: 40px;
+pointer-events: none;
+}
+
+/* SLIDE 5 — INTRO SECTION */
+#s5 { background: var(–bg-dark); }
+#s5 .intro-text {
+font-family: ‘Lato’, sans-serif;
+font-size: clamp(16px, 2vw, 22px);
+color: var(–white-dim);
+max-width: 700px;
+line-height: 1.8;
+font-weight: 300;
+}
+#s5 .highlight {
+color: var(–white-warm);
+font-weight: 700;
+}
+
+/* SLIDE 6 — RIGHT 1 TITLE */
+#s6 { background: linear-gradient(135deg, #0f0b06 0%, #1a1008 50%, #0f0b06 100%); }
+#s6 .right-number {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(80px, 15vw, 200px);
+color: var(–gold);
+opacity: 0.08;
+position: absolute;
+font-weight: 900;
+}
+#s6 .right-label {
+font-family: ‘Lato’, sans-serif;
+font-size: 12px;
+letter-spacing: 5px;
+color: var(–gold);
+text-transform: uppercase;
+margin-bottom: 16px;
+}
+#s6 .right-title {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(32px, 6vw, 80px);
+color: var(–white-warm);
+font-weight: 700;
+}
+
+/* SLIDE 7 — CONTEXT */
+#s7 { background: var(–bg-dark); }
+#s7 .context-text {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(20px, 3vw, 36px);
+color: var(–white-warm);
+max-width: 800px;
+line-height: 1.6;
+font-style: italic;
+}
+
+/* SLIDE 8 — QURAN QUOTE */
+#s8 { background: var(–bg-green); }
+#s8 .quran-arabic {
+font-family: ‘Noto Naskh Arabic’, serif;
+font-size: clamp(28px, 4vw, 52px);
+color: var(–gold-light);
+margin-bottom: 32px;
+direction: rtl;
+line-height: 1.8;
+}
+#s8 .quran-translation {
+font-family: ‘Playfair Display’, serif;
+font-style: italic;
+font-size: clamp(16px, 2.2vw, 26px);
+color: var(–white-warm);
+max-width: 700px;
+line-height: 1.6;
+margin-bottom: 20px;
+}
+#s8 .quran-ref {
+font-family: ‘Lato’, sans-serif;
+font-size: 13px;
+color: var(–gold);
+letter-spacing: 2px;
+opacity: 0.7;
+}
+
+/* SLIDE 9 — DATES COMPARISON */
+#s9 { background: var(–bg-dark); }
+#s9 .dates-grid {
+display: flex;
+gap: clamp(20px, 5vw, 80px);
+align-items: center;
+justify-content: center;
+}
+#s9 .date-item {
+text-align: center;
+}
+#s9 .date-year {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(36px, 6vw, 80px);
+font-weight: 900;
+line-height: 1;
+margin-bottom: 8px;
+}
+#s9 .date-label {
+font-family: ‘Lato’, sans-serif;
+font-size: clamp(12px, 1.5vw, 16px);
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(–white-dim);
+}
+#s9 .date-item.islam .date-year { color: var(–gold); }
+#s9 .date-item.west .date-year { color: #888; }
+#s9 .divider-v { width: 1px; height: 80px; background: rgba(201,168,76,0.3); }
+
+/* SLIDE 10 — RIGHT 2 TITLE */
+#s10 { background: linear-gradient(135deg, #0f0b06 0%, #1a1008 50%, #0f0b06 100%); }
+
+/* SLIDE 11 — MAHR EXPLANATION */
+#s11 { background: var(–bg-dark); }
+#s11 .mahr-text {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(22px, 3.5vw, 44px);
+color: var(–white-warm);
+max-width: 800px;
+line-height: 1.5;
+}
+#s11 .emphasis {
+color: var(–gold);
+font-style: italic;
+}
+
+/* SLIDE 12 — MAHR QURAN */
+#s12 { background: var(–bg-green); }
+
+/* SLIDE 13 — MAHR CONTRAST */
+#s13 { background: var(–bg-dark); }
+#s13 .contrast-text {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(20px, 3vw, 38px);
+color: var(–white-warm);
+max-width: 800px;
+line-height: 1.6;
+}
+
+/* SLIDE 14 — RIGHT 3 TITLE */
+#s14 { background: linear-gradient(135deg, #0f0b06 0%, #1a1008 50%, #0f0b06 100%); }
+
+/* SLIDE 15 — CONSENT */
+#s15 { background: var(–bg-dark); }
+
+/* SLIDE 16 — HADITH */
+#s16 { background: var(–bg-burgundy); }
+#s16 .hadith-text {
+font-family: ‘Playfair Display’, serif;
+font-style: italic;
+font-size: clamp(18px, 2.5vw, 30px);
+color: var(–white-warm);
+max-width: 750px;
+line-height: 1.7;
+margin-bottom: 20px;
+border-left: 3px solid var(–gold);
+padding-left: 32px;
+text-align: left;
+}
+#s16 .hadith-source {
+font-family: ‘Lato’, sans-serif;
+font-size: 13px;
+color: var(–gold);
+letter-spacing: 2px;
+opacity: 0.7;
+}
+
+/* SLIDE 17 — HER CHOICE */
+#s17 { background: var(–bg-dark); }
+#s17 .choice-text {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(24px, 4vw, 52px);
+color: var(–white-warm);
+max-width: 800px;
+line-height: 1.5;
+}
+
+/* SLIDE 18 — OUTRO SUMMARY */
+#s18 { background: var(–bg-dark); }
+#s18 .three-rights {
+display: flex;
+flex-direction: column;
+gap: 20px;
+margin-bottom: 32px;
+}
+#s18 .right-item {
+font-family: ‘Lato’, sans-serif;
+font-size: clamp(16px, 2vw, 22px);
+color: var(–white-warm);
+display: flex;
+align-items: center;
+gap: 16px;
+justify-content: center;
+}
+#s18 .right-icon {
+color: var(–gold);
+font-size: 20px;
+}
+
+/* SLIDE 19 — CTA */
+#s19 { background: var(–bg-dark); }
+#s19 .cta-main {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(24px, 4vw, 52px);
+color: var(–white-warm);
+max-width: 800px;
+line-height: 1.5;
+margin-bottom: 32px;
+}
+#s19 .subscribe-badge {
+display: inline-block;
+background: var(–gold);
+color: #0f0b06;
+font-family: ‘Lato’, sans-serif;
+font-weight: 700;
+font-size: clamp(14px, 1.8vw, 18px);
+letter-spacing: 3px;
+text-transform: uppercase;
+padding: 14px 40px;
+}
+
+/* SLIDE 20 — CLOSING */
+#s20 { background: var(–bg-dark); }
+#s20 .closing-arabic {
+font-family: ‘Noto Naskh Arabic’, serif;
+font-size: clamp(36px, 7vw, 100px);
+color: var(–gold);
+direction: rtl;
+margin-bottom: 16px;
+animation: glowPulse 3s ease infinite;
+}
+#s20 .closing-translation {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(14px, 2vw, 22px);
+color: var(–white-dim);
+font-style: italic;
+letter-spacing: 2px;
+}
+#s20 .peace {
+font-family: ‘Lato’, sans-serif;
+font-size: clamp(13px, 1.5vw, 18px);
+color: var(–gold);
+letter-spacing: 4px;
+text-transform: uppercase;
+margin-top: 32px;
+opacity: 0.8;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============ SLIDES ============ -->
+
+<!-- SLIDE 1 -->
+
+<div class="slide" id="s1">
+  <div class="arabic-bg"></div>
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="main-text animate-2">"In 1400 years..."</p>
+</div>
+
+<!-- SLIDE 2 -->
+
+<div class="slide" id="s2">
+  <div class="arabic-bg"></div>
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="claim animate-1">Women have been told that<br><span style="color:var(--gold); font-style:italic;">Islam oppressed them.</span></p>
+</div>
+
+<!-- SLIDE 3 -->
+
+<div class="slide" id="s3">
+  <div class="arabic-bg"></div>
+  <p class="big-word animate-scale">But...</p>
+</div>
+
+<!-- SLIDE 4 -->
+
+<div class="slide" id="s4">
+  <div class="arabic-bg"></div>
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="arabic-calligraphy">الحق</p>
+  <p class="question animate-1">What if that story...<br><span style="color:var(--gold);">was never true?</span></p>
+</div>
+
+<!-- SLIDE 5 -->
+
+<div class="slide" id="s5">
+  <div class="arabic-bg"></div>
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="intro-text animate-1">
+    What if Islam gave women rights that the Western world<br>
+    wouldn't recognize for <span class="highlight">over a thousand years?</span><br><br>
+    Rights not given by a movement — not earned through protest —<br>
+    but <span class="highlight">revealed by Allah.</span>
+  </p>
+</div>
+
+<!-- SLIDE 6 — RIGHT 1 TITLE -->
+
+<div class="slide" id="s6">
+  <div class="arabic-bg"></div>
+  <p class="right-number animate-fade">I</p>
+  <p class="right-label animate-1">Right Number One</p>
+  <div class="gold-line animate-2"></div>
+  <p class="right-title animate-3">The Right<br>to Inherit</p>
+</div>
+
+<!-- SLIDE 7 -->
+
+<div class="slide" id="s7">
+  <div class="arabic-bg"></div>
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="context-text animate-1">
+    In most of the world — Europe, Asia, the Roman Empire —<br>
+    women could not inherit.<br><br>
+    They <span style="color:var(--gold);">were</span> inherited.
+  </p>
+</div>
+
+<!-- SLIDE 8 — QURAN RIGHT 1 -->
+
+<div class="slide" id="s8">
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="section-label animate-1" style="color:var(--accent-green); letter-spacing:3px;">القرآن الكريم</p>
+  <p class="quran-arabic animate-2">لِّلرِّجَالِ نَصِيبٌ مِّمَّا تَرَكَ ٱلْوَٰلِدَانِ<br>وَلِلنِّسَآءِ نَصِيبٌ</p>
+  <div class="gold-line animate-3"></div>
+  <p class="quran-translation animate-4">
+    "For men is a share of what the parents and close relatives leave,<br>
+    and for women is a share..."
+  </p>
+  <p class="quran-ref animate-5">Surah An-Nisa — 4:7</p>
+</div>
+
+<!-- SLIDE 9 — DATES -->
+
+<div class="slide" id="s9">
+  <div class="arabic-bg"></div>
+  <p class="section-label animate-1">The Timeline</p>
+  <div class="dates-grid animate-2">
+    <div class="date-item islam">
+      <div class="date-year">610</div>
+      <div class="date-label">Islam — CE</div>
+    </div>
+    <div class="divider-v"></div>
+    <div class="date-item west">
+      <div class="date-year">1870</div>
+      <div class="date-label">England</div>
+    </div>
+    <div class="divider-v"></div>
+    <div class="date-item west">
+      <div class="date-year">1965</div>
+      <div class="date-label">France</div>
+    </div>
+  </div>
+  <p class="animate-3" style="font-family:'Lato',sans-serif; font-size:clamp(13px,1.5vw,16px); color:var(--white-dim); margin-top:32px; letter-spacing:1px;">Women's right to own property</p>
+</div>
+
+<!-- SLIDE 10 — RIGHT 2 TITLE -->
+
+<div class="slide" id="s10">
+  <div class="arabic-bg"></div>
+  <p class="right-number animate-fade" style="font-family:'Playfair Display',serif; font-size:clamp(80px,15vw,200px); color:var(--gold); opacity:0.08; position:absolute; font-weight:900;">II</p>
+  <p class="right-label animate-1" style="font-family:'Lato',sans-serif; font-size:12px; letter-spacing:5px; color:var(--gold); text-transform:uppercase; margin-bottom:16px;">Right Number Two</p>
+  <div class="gold-line animate-2"></div>
+  <p class="right-title animate-3" style="font-family:'Playfair Display',serif; font-size:clamp(32px,6vw,80px); color:var(--white-warm); font-weight:700;">Mahr —<br>Her Money Alone</p>
+</div>
+
+<!-- SLIDE 11 -->
+
+<div class="slide" id="s11">
+  <div class="arabic-bg"></div>
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="mahr-text animate-1">
+    When a Muslim woman marries,<br>
+    she receives a gift.<br><br>
+    Not to her father.<br>
+    Not to her family.<br><br>
+    <span class="emphasis">Directly. To her.</span>
+  </p>
+</div>
+
+<!-- SLIDE 12 — MAHR QURAN -->
+
+<div class="slide" id="s12">
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="section-label animate-1" style="color:var(--accent-green); letter-spacing:3px;">القرآن الكريم</p>
+  <p class="quran-arabic animate-2" style="font-family:'Noto Naskh Arabic',serif; font-size:clamp(28px,4vw,52px); color:var(--gold-light); margin-bottom:32px; direction:rtl; line-height:1.8;">وَءَاتُوا۟ ٱلنِّسَآءَ صَدُقَـٰتِهِنَّ نِحْلَةً</p>
+  <div class="gold-line animate-3"></div>
+  <p class="quran-translation animate-4" style="font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(16px,2.2vw,26px); color:var(--white-warm); max-width:700px; line-height:1.6; margin-bottom:20px;">
+    "And give the women their Mahr<br>as a free gift."
+  </p>
+  <p class="quran-ref animate-5" style="font-family:'Lato',sans-serif; font-size:13px; color:var(--gold); letter-spacing:2px; opacity:0.7;">Surah An-Nisa — 4:4</p>
+</div>
+
+<!-- SLIDE 13 -->
+
+<div class="slide" id="s13">
+  <div class="arabic-bg"></div>
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="contrast-text animate-1">
+    In medieval Europe, a woman's dowry<br>
+    became her <span style="color:#888; text-decoration:line-through;">husband's</span> property<br>
+    the moment she married.<br><br>
+    Islam said: <span style="color:var(--gold); font-style:italic;">No. This is hers.</span>
+  </p>
+</div>
+
+<!-- SLIDE 14 — RIGHT 3 TITLE -->
+
+<div class="slide" id="s14">
+  <div class="arabic-bg"></div>
+  <p class="right-number animate-fade" style="font-family:'Playfair Display',serif; font-size:clamp(80px,15vw,200px); color:var(--gold); opacity:0.08; position:absolute; font-weight:900;">III</p>
+  <p class="right-label animate-1" style="font-family:'Lato',sans-serif; font-size:12px; letter-spacing:5px; color:var(--gold); text-transform:uppercase; margin-bottom:16px;">Right Number Three</p>
+  <div class="gold-line animate-2"></div>
+  <p class="right-title animate-3" style="font-family:'Playfair Display',serif; font-size:clamp(32px,6vw,80px); color:var(--white-warm); font-weight:700;">The Right<br>to Say No</p>
+</div>
+
+<!-- SLIDE 15 -->
+
+<div class="slide" id="s15">
+  <div class="arabic-bg"></div>
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="animate-1" style="font-family:'Playfair Display',serif; font-size:clamp(22px,3.5vw,48px); color:var(--white-warm); max-width:800px; line-height:1.5;">
+    In Islam, a woman cannot be<br>
+    forced into marriage.<br><br>
+    Her consent is not optional.<br>
+    <span style="color:var(--gold);">It is a condition.</span>
+  </p>
+</div>
+
+<!-- SLIDE 16 — HADITH -->
+
+<div class="slide" id="s16">
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="section-label animate-1" style="color:#c0a0a8; letter-spacing:3px;">حديث شريف — Hadith</p>
+  <p class="hadith-text animate-2">
+    "A previously married woman may not be given in marriage without her command,<br>
+    and a virgin may not be given in marriage without her permission."
+  </p>
+  <p class="hadith-source animate-3">— Prophet Muhammad ﷺ &nbsp;|&nbsp; Bukhari & Muslim</p>
+</div>
+
+<!-- SLIDE 17 -->
+
+<div class="slide" id="s17">
+  <div class="arabic-bg"></div>
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="choice-text animate-1">
+    A woman came to the Prophet ﷺ<br>
+    married without her consent.<br><br>
+    He gave her <span style="color:var(--gold); font-style:italic;">the choice.</span><br><br>
+    <span style="font-size:0.7em; color:var(--white-dim);">Stay — or leave.<br>It was hers to decide.</span>
+  </p>
+</div>
+
+<!-- SLIDE 18 — SUMMARY -->
+
+<div class="slide" id="s18">
+  <div class="arabic-bg"></div>
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="section-label animate-1">Three Rights</p>
+  <div class="three-rights animate-2">
+    <div class="right-item"><span class="right-icon">◆</span> The Right to Inherit</div>
+    <div class="gold-line" style="margin:0 auto;"></div>
+    <div class="right-item"><span class="right-icon">◆</span> Financial Independence — Mahr</div>
+    <div class="gold-line" style="margin:0 auto;"></div>
+    <div class="right-item"><span class="right-icon">◆</span> Consent in Marriage</div>
+  </div>
+  <p class="animate-3" style="font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(14px,1.8vw,20px); color:var(--white-dim); margin-top:24px;">Given by Allah. Not by revolution.</p>
+</div>
+
+<!-- SLIDE 19 — CTA -->
+
+<div class="slide" id="s19">
+  <div class="arabic-bg"></div>
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="cta-main animate-1">
+    If you want to know what Islam<br>
+    <span style="color:var(--gold);">truly</span> says about women —<br>
+    not what culture says,<br>
+    not what the media says —<br><br>
+    <span style="font-size:0.8em; color:var(--white-dim);">this channel is for you.</span>
+  </p>
+  <div class="subscribe-badge animate-2">Subscribe</div>
+</div>
+
+<!-- SLIDE 20 — CLOSING -->
+
+<div class="slide" id="s20">
+  <div class="arabic-bg"></div>
+  <div class="geo-corner tl"></div><div class="geo-corner tr"></div>
+  <div class="geo-corner bl"></div><div class="geo-corner br"></div>
+  <p class="closing-arabic animate-scale">السَّلَامُ عَلَيْكُمْ</p>
+  <p class="closing-translation animate-2">Peace be upon you</p>
+  <div class="gold-line animate-3"></div>
+  <p class="peace animate-4">Assalamu Alaikum</p>
+</div>
+
+<script>
+// 20 slides over 3:42 = 222 seconds
+// Each slide duration in milliseconds (tuned to script pacing)
+const durations = [
+  4500,  // s1  "In 1400 years..."
+  5000,  // s2  "Women have been told..."
+  3500,  // s3  "But..."
+  6000,  // s4  "What if that story..."
+  9000,  // s5  "What if Islam gave women rights..."
+  5000,  // s6  Right #1 title
+  8000,  // s7  "In most of the world..."
+  10000, // s8  Quran slide Surah An-Nisa 4:7
+  9000,  // s9  Dates comparison
+  5000,  // s10 Right #2 title
+  8000,  // s11 "When a Muslim woman marries..."
+  10000, // s12 Quran slide Surah An-Nisa 4:4
+  8000,  // s13 "In medieval Europe..."
+  5000,  // s14 Right #3 title
+  8000,  // s15 "In Islam a woman cannot..."
+  10000, // s16 Hadith slide
+  9000,  // s17 "A woman came to the Prophet..."
+  9000,  // s18 Summary — three rights
+  10000, // s19 CTA — subscribe
+  8500,  // s20 Assalamu Alaikum closing
+];
+
+let current = 0;
+const total = 20;
+let timer = null;
+
+function showSlide(n) {
+  document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+  const slide = document.getElementById('s' + (n + 1));
+  if (slide) slide.classList.add('active');
+}
+
+function advance() {
+  if (current < total - 1) {
+    current++;
+    showSlide(current);
+    timer = setTimeout(advance, durations[current]);
+  }
+}
+
+// Start
+showSlide(0);
+timer = setTimeout(advance, durations[0]);
+</script>
+
+</body>
+</html>
